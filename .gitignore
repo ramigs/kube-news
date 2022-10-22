@@ -108,6 +108,9 @@ node_modules/
 # Local .terraform directories
 **/.terraform/*
 
+# Outuput kube config file
+terraform/kube_config.yaml
+
 # .tfstate files
 *.tfstate
 *.tfstate.*
