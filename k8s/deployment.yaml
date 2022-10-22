@@ -51,7 +51,7 @@ spec:
     spec:
       containers:
         - name: express
-          image: ramigs/kube-news:v1
+          image: ramigs/kube-news:{{TAG}}
           ports:
            - containerPort: 8080
           env:
