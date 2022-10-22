@@ -5,7 +5,7 @@ pipeline {
         stage ("Build Docker Image") {
             steps {
                 script {
-                    dockerapp = docker.build("ramigs/kube-news:${env.BUILD_ID}", "-f ./Dockerfile ./")
+                    dockerapp = docker.build("ramigs/kube-news:v${env.BUILD_ID}", "-f ./Dockerfile ./")
                 }
             }
         }
@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry("https://registry.hub.docker.com/", "Docker Hub") {
-                        dockerapp.push("${env.BUILD_ID}")
+                        dockerapp.push("v${env.BUILD_ID}")
                         dockerapp.push("latest")
                     }
                 }
