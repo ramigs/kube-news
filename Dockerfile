@@ -9,7 +9,7 @@ RUN chown node:node ./
 
 USER node
 
-COPY --chown=node:node src/package*.json .
+COPY --chown=node:node src/package*.json ./
 
 RUN npm ci && npm cache clean --force
 
